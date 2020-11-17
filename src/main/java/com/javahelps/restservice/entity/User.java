@@ -14,7 +14,7 @@ import org.hibernate.annotations.Proxy;
 
 @Entity
 
-@Table(name="product_names")
+@Table(name="ProductNames")
 @Proxy(lazy=false)
 public class User {
 
