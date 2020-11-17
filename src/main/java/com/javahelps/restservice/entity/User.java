@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.TableGenerator;
 
 import org.hibernate.annotations.Proxy;
 
@@ -23,6 +24,7 @@ public class User {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE, generator = "product_names")
+	@TableGenerator(name="product_names", table="id", schema="q8ucpgcjotv3c0vp")
 	private int id;
 	
 	private String barcode;
