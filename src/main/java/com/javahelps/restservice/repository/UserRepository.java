@@ -5,6 +5,7 @@ import java.util.stream.Stream;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 import java.util.concurrent.Future;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -26,9 +27,8 @@ public interface UserRepository extends JpaRepository<User,Integer> {
 
 	List <User> findByBarcodeAndQtyGreaterThan(@PathVariable("barcode")String barcode,@RequestParam("qty")Integer qty);
 	 List<User>findByQty(Integer qty);
-
+	 Optional<User> findById(Integer qty);
     List<User> findByBarcodeAndQty(@PathVariable("barcode") String barcode,@RequestParam("qty")Integer qty);
 
    public  List<User> findByQtyGreaterThan(Integer qty);
-
 }

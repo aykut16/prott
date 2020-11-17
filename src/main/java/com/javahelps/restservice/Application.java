@@ -9,11 +9,6 @@ import com.javahelps.restservice.entity.User;
 
 import com.javahelps.restservice.repository.UserRepository;
 
-import com.javahelps.restservice.repository.UserRepository2;
-
-import com.javahelps.restservice.repository.UserRepository3;
-
-
 
 @SpringBootApplication
 public class Application {
@@ -23,7 +18,7 @@ public class Application {
 	}
 
 	@Bean
-	protected CommandLineRunner init(final UserRepository userRepository , UserRepository2 userRepository2,UserRepository3 userRepository3) {
+	protected CommandLineRunner init(final UserRepository userRepository ) {
 		return null;
 
 		

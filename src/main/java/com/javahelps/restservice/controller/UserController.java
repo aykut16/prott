@@ -1,12 +1,12 @@
 package com.javahelps.restservice.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.websocket.server.PathParam;
 
-import org.hibernate.validator.internal.util.logging.Log;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.web.ServerProperties.Session;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
@@ -26,7 +26,6 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.javahelps.restservice.entity.User;
 
 import com.javahelps.restservice.repository.UserRepository;
-import com.javahelps.restservice.repository.UserRepository3;
 
 import javassist.tools.web.BadHttpRequest;
 
@@ -46,8 +45,8 @@ public class UserController {
 	}
 
 	@GetMapping(path = "/{id}")
-	public User find(@PathVariable("id") Integer id) {
-		return repository.findOne(id);
+	public Optional<User> find(@PathVariable("id") Integer id) {
+		return repository.findById(id);
 	}
 	
 	@GetMapping(path = "/0/0")
@@ -91,12 +90,12 @@ public class UserController {
 	
 	@DeleteMapping(path = "/delete/{id}")
 	public void delete(@PathVariable("id") Integer id) {
-		repository.delete(id);
+		repository.deleteById(id);
 	}
 	
 	@PutMapping(path = "/{id}")
 	public User update(@PathVariable("id") Integer id, @RequestBody User user) throws BadHttpRequest {
-		if (repository.exists(id)) {
+		if (repository.existsById(id)) {
 			user.setId(id);
 			return repository.save(user);
 		} else {
