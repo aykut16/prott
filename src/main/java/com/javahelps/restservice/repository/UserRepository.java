@@ -13,6 +13,7 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.data.repository.query.Param;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.data.rest.core.annotation.RestResource;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Repository;
@@ -25,6 +26,8 @@ import com.javahelps.restservice.entity.User;
 @Repository
 @Transactional
 @EnableJpaRepositories
+@RepositoryRestResource(exported = false)
+
 public interface UserRepository extends JpaRepository<User,Integer> {
 
 	List <User> findByBarcodeAndQtyGreaterThan(@PathVariable("barcode")String barcode,@RequestParam("qty")Integer qty);
