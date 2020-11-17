@@ -23,8 +23,7 @@ public class User {
 	
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.TABLE, generator = "product_names")
-	@TableGenerator(name="product_names", table="id", schema="q8ucpgcjotv3c0vp")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private int id;
 	
 	private String barcode;
