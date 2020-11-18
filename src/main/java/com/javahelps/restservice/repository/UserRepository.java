@@ -22,10 +22,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.javahelps.restservice.entity.User;
-
+@RestResource(exported = false)
 @Repository
+@Transactional
 @EnableJpaRepositories
-
+@RepositoryRestResource(exported = false)
 
 public interface UserRepository extends JpaRepository<User,Integer> {
 
