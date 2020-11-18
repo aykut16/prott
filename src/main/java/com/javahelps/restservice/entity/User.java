@@ -14,8 +14,8 @@ import org.hibernate.annotations.Proxy;
 
 
 
-@Table(name="ProductNames")
-@Entity
+
+@Entity(name="ProductNames")
 public class User {
 
 	
