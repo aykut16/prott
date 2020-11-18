@@ -25,29 +25,31 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id",unique = true, length = 128)
 	private int id;
+	@Column(name = "barcode" )
 	private String barcode;
+	
+	@Column(name = "name" )
 	private String name;
+	
+	@Column(name = "bname" )
 	private String bname;
+	
+	@Column(name = "category" )
 	private String category;
+	
+	@Column(name = "qty" )
 	private int qty;
+	
+	@Column(name = "dater" )
 	private Date dater;
+	
+	@Column(name = "datel" )
 	private Date datel;
+	
+	@Column(name = "cost" )
 	private double cost;
 	
-	
-	public User(String barcode,String name,String bname,String category,int qty,Date dater,Date datel,double cost) 
-	{
-		super();
-		this.barcode=barcode;
-		this.name=name;
-		this.bname=bname;
-		this.category=category;
-		this.qty=qty;
-		this.dater=dater;
-		this.datel=datel;
-		this.cost=cost;
-		
-	}
+
 	
 	
 	
