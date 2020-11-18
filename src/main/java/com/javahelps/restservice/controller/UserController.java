@@ -55,10 +55,17 @@ public class UserController {
 	}
 	
 	@GetMapping(path="barcode2/{barcode}")
-	public List<User> findByBarcode(@PathVariable String barcode,@RequestParam("qty")Integer qty) {
-		return repository.findByBarcodeAndQtyGreaterThan(barcode,qty);
+	public ResponseEntity <List<User>> findByBarcode(@PathVariable String barcode,@RequestParam("qty")Integer qty) {
+		List<User> users= repository.findByBarcodeAndQtyGreaterThan(barcode,qty);
+		if (CollectionUtils.isEmpty(users)){
+		    return ResponseEntity.noContent()
+		        .build();
+		  }
+		return ResponseEntity.ok()
+			      .body(users);
+		}
 		
-	}
+	
 	
 
 	@GetMapping(path = "/barcode/{barcode}")
