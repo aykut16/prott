@@ -5,7 +5,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import com.javahelps.restservice.entity.User;
 
 import com.javahelps.restservice.repository.UserRepository;
 
