@@ -26,7 +26,7 @@ import com.javahelps.restservice.entity.User;
 @Repository
 @Transactional
 @EnableJpaRepositories
-@RepositoryRestResource(exported = false)
+@RepositoryRestResource
 
 public interface UserRepository extends JpaRepository<User,Integer> {
 
