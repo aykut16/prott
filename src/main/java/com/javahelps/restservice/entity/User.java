@@ -14,7 +14,9 @@ import org.hibernate.annotations.Proxy;
 
 
 @Entity
-public  class User extends DistributedEntity  {
+@Table(name="product_names")
+@Proxy(lazy = false)
+public  class User {
 
 	
 	
@@ -43,13 +45,7 @@ public  class User extends DistributedEntity  {
 
 	private double cost;
 	
-	
-	public User() 
-	{
 
-		
-	}
-	
 	
 	
 	
@@ -63,7 +59,7 @@ public  class User extends DistributedEntity  {
 		
 	}
 	
-	public Integer getId() {
+	public int getId() {
 		return id;
 	}
 
