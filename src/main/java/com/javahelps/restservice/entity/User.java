@@ -14,40 +14,24 @@ import org.hibernate.annotations.Proxy;
 
 
 @Entity
-@Table(name="Product_Names")
-
+@Table(name="product_names")
+@Proxy(lazy = false)
 public class User {
 
 	
 	
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	
-	@Column(name = "id")
+	@GeneratedValue
+	@Column(name = "id",unique = true, length = 128)
 	private int id;
-	@Column(name = "barcode")
 	private String barcode;
-	
-
 	private String name;
-	
-
 	private String bname;
-	
-
 	private String category;
-	
-
 	private int qty;
-	
-
 	private Date dater;
-	
-	
 	private Date datel;
-	
-
 	private double cost;
 	
 	
