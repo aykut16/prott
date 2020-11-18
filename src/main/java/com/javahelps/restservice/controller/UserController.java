@@ -7,6 +7,7 @@ import javax.websocket.server.PathParam;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
@@ -45,8 +46,9 @@ public class UserController {
 	}
 
 	@GetMapping(path = "/{id}")
-	public Optional<User> find(@PathVariable("id") Integer id) {
-		return repository.findById(id);
+	public User find(@PathVariable("id") Integer id) {
+		return repository.findById(id)
+		.orElseThrow(() -> new ResourceNotFoundException("User not found with id :" + id));
 	}
 	
 	@GetMapping(path = "/0/0")
@@ -57,6 +59,7 @@ public class UserController {
 	@GetMapping(path = "/1/{qty}")
 	public List<User> findByQthGreaterThan(@PathVariable Integer qty) {
 		return repository.findByQtyGreaterThan(qty);
+				
 		
 	}
 	
