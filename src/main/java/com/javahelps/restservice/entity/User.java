@@ -22,7 +22,7 @@ public class User {
 	
 	
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id",unique = true, length = 128)
 	private int id;
 	private String barcode;
