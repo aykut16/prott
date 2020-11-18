@@ -50,7 +50,7 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<scope>runtime</scope>
+			<scope>5.1.34</scope>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
