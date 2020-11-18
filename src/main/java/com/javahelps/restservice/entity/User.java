@@ -14,7 +14,7 @@ import org.hibernate.annotations.Proxy;
 
 
 @Entity
-@Table(name="User")
+@Table(name="Product_Names")
 
 public class User {
 
@@ -24,7 +24,6 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
 	@Column(name = "barcode")
 	private String barcode;
 	
