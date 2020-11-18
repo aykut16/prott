@@ -2,6 +2,7 @@ package com.javahelps.restservice.entity;
 
 import java.sql.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -21,24 +22,25 @@ public  class User {
 	@GeneratedValue
 	private int id;
 
+	@Column(name = "barcode")
 	private String barcode;
 	
-
+	@Column(name = "name")
 	private String name;
 	
-
+	@Column(name = "bname")
 	private String bname;
 	
-
+	@Column(name = "category")
 	private String category;
 	
-
+	@Column(name = "qty")
 	private int qty;
-
+	@Column(name = "dater")
 	private Date dater;
-
+	@Column(name = "datel")
 	private Date datel;
-
+	@Column(name = "cost")
 	private double cost;
 	
 
