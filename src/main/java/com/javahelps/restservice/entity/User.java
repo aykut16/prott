@@ -50,18 +50,10 @@ public abstract class User {
 	private double cost;
 	
 	
-	public User(String barcode,String name,String bname,String category,int qty,Date dater,Date datel,double cost) 
+	public User() 
 	{
 		
-		this.barcode=barcode;
-		this.name=name;
-		this.bname=bname;
-		this.category=category;
-		this.qty=qty;
-		this.dater=dater;
-		this.datel=datel;
-		this.cost=cost;
-		
+	
 	}
 	
 	
