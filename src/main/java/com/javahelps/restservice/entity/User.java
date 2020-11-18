@@ -13,9 +13,9 @@ import javax.persistence.TableGenerator;
 import org.hibernate.annotations.Proxy;
 
 
+@Entity
+@Table(name="User")
 
-
-@Entity(name="ProductNames")
 public class User {
 
 	
