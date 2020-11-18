@@ -16,7 +16,7 @@ import org.hibernate.annotations.Proxy;
 @Entity
 @Table(name="product_names")
 @Proxy(lazy = false)
-public class User {
+public abstract class User {
 
 	
 	
